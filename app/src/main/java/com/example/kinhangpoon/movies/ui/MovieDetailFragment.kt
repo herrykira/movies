@@ -1,10 +1,12 @@
 package com.example.kinhangpoon.movies.ui
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.kinhangpoon.movies.MovieApplication
 import com.example.kinhangpoon.movies.R
 import com.example.kinhangpoon.movies.databinding.FragmentMovieDetailBinding
 import com.example.kinhangpoon.movies.model.response.MovieResponse
@@ -15,6 +17,12 @@ class MovieDetailFragment : Fragment() {
     private lateinit var movie: MovieResponse
     private lateinit var binding: FragmentMovieDetailBinding
 
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        val detailComponentFactory =
+            (requireActivity().application as MovieApplication).appComponent.detailComponent()
+        detailComponentFactory.create().inject(this)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

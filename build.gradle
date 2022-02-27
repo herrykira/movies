@@ -25,6 +25,7 @@ buildscript {
         def room_version = '2.4.1'
         def truth_version = '1.0'
         def work_version = '2.7.0'
+        def dagger_version = '2.40'
 
         libraries = [
                 // Coroutines
@@ -52,6 +53,8 @@ buildscript {
                 // threading
                 "androidx.annotation:annotation:$annotations_version",
 
+                //dagger
+                "com.google.dagger:dagger:$dagger_version",
         ]
 
         arch_libraries = [
@@ -63,7 +66,8 @@ buildscript {
 
         librariesKapt = [
                 "androidx.room:room-compiler:$room_version",
-                "com.github.bumptech.glide:compiler:$glide_version"
+                "com.github.bumptech.glide:compiler:$glide_version",
+                "com.google.dagger:dagger-compiler:$dagger_version",
         ]
 
         testLibraries = [
@@ -93,6 +97,10 @@ buildscript {
                 //  Architecture Components testing libraries
                 "androidx.arch.core:core-testing:$arch_version",
                 "androidx.work:work-testing:$work_version",
+        ]
+
+        androidTestLibrariesKapt = [
+                "com.google.dagger:dagger-compiler: $dagger_version",
         ]
     }
 

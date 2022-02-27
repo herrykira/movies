@@ -1,8 +1,10 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-android-extensions'
     id 'kotlin-kapt'
 }
+
 android {
     compileSdkVersion compile_sdk_version
     dataBinding {
@@ -48,6 +50,7 @@ dependencies {
 
     testImplementation testLibraries
     androidTestImplementation androidTestLibraries
+    kaptAndroidTest androidTestLibrariesKapt
 
     implementation 'com.squareup.picasso:picasso:2.5.2'
 
