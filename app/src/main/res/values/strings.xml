@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">movies</string>
+    <string name="query_hint">Search by Movie</string>
+    <string name="submit_button">Submit</string>
+    <string name="movies">Movies </string>
+    <string name="network_error">Network Error</string>
+    <string name="no_results">No results</string>
+    <string name="loading_data">Loading Data</string>
+</resources>
