@@ -1,13 +1,13 @@
-package com.example.kinhangpoon.movies.view
+package com.example.kinhangpoon.movies.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.kinhangpoon.movies.MovieSearchActivity.Companion.MOVIE_EXTRAS
 import com.example.kinhangpoon.movies.databinding.FragmentMovieDetailBinding
 import com.example.kinhangpoon.movies.model.response.MovieResponse
+import com.example.kinhangpoon.movies.ui.MovieSearchActivity.Companion.MOVIE_EXTRAS
 
 class MovieDetailFragment : Fragment() {
 

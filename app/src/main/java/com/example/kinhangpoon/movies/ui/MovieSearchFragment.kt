@@ -1,4 +1,4 @@
-package com.example.kinhangpoon.movies.view
+package com.example.kinhangpoon.movies.ui
 
 import android.content.Context
 import android.os.Bundle
@@ -15,12 +15,12 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.kinhangpoon.movies.MovieSearchActivity.Companion.QUERY_EXTRAS
 import com.example.kinhangpoon.movies.common.GUIUtil
 import com.example.kinhangpoon.movies.databinding.FragmentMovieSearchBinding
 import com.example.kinhangpoon.movies.model.adapter.MovieAdapter
 import com.example.kinhangpoon.movies.model.response.MovieResponse
 import com.example.kinhangpoon.movies.common.Injector
+import com.example.kinhangpoon.movies.ui.MovieSearchActivity.Companion.QUERY_EXTRAS
 import com.example.kinhangpoon.movies.viewModel.MovieViewModel
 import kotlinx.coroutines.flow.collect
 

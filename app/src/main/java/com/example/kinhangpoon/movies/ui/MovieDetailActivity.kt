@@ -1,11 +1,11 @@
-package com.example.kinhangpoon.movies
+package com.example.kinhangpoon.movies.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.kinhangpoon.movies.MovieSearchActivity.Companion.MOVIE_EXTRAS
+import com.example.kinhangpoon.movies.R
 import com.example.kinhangpoon.movies.databinding.ActivityMovieDetailBinding
 import com.example.kinhangpoon.movies.model.response.MovieResponse
-import com.example.kinhangpoon.movies.view.MovieDetailFragment
+import com.example.kinhangpoon.movies.ui.MovieSearchActivity.Companion.MOVIE_EXTRAS
 
 class MovieDetailActivity : AppCompatActivity() {
     private var movie: MovieResponse? = null
@@ -32,6 +32,7 @@ class MovieDetailActivity : AppCompatActivity() {
                 MovieDetailFragment::class.java.simpleName
             ).commit()
     }
+
     /**
      * save MovieResponse when screen orientation changes
      */

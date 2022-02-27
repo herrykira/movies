@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/CustomActivityTheme">
         <activity
-            android:name=".MovieSearchActivity"
+            android:name=".ui.MovieSearchActivity"
             android:resizeableActivity="true"
             android:exported="true">
             <intent-filter>
@@ -22,7 +22,7 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".MovieDetailActivity">
+        <activity android:name=".ui.MovieDetailActivity">
         </activity>
     </application>
 

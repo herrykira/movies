@@ -1,12 +1,12 @@
-package com.example.kinhangpoon.movies
+package com.example.kinhangpoon.movies.ui
 
 import android.content.Intent
 import android.content.res.Configuration
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.kinhangpoon.movies.R
 import com.example.kinhangpoon.movies.databinding.ActivityMovieSearchBinding
 import com.example.kinhangpoon.movies.model.response.MovieResponse
-import com.example.kinhangpoon.movies.view.MovieSearchFragment
 
 /**
  * used MVP design pattern to develop this application
