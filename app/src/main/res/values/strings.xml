@@ -6,4 +6,11 @@
     <string name="network_error">Network Error</string>
     <string name="no_results">No results</string>
     <string name="loading_data">Loading Data</string>
+    <string name="movie_title">Title: </string>
+    <string name="movie_original_title">Original Title: </string>
+    <string name="movie_overview">Overview: </string>
+    <string name="movie_release_date">Release Date: </string>
+    <string name="movie_vote_count">Vote Count: </string>
+    <string name="movie_vote_average">Vote Average: </string>
+    <string name="movie_popularity">Popularity: </string>
 </resources>

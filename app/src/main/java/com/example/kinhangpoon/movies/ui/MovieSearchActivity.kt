@@ -20,8 +20,8 @@ import com.example.kinhangpoon.movies.model.response.MovieResponse
 class MovieSearchActivity : AppCompatActivity(), MovieSearchFragment.MovieHost {
 
     companion object {
-        val MOVIE_EXTRAS = "movie extras"
-        val QUERY_EXTRAS = "query extras"
+        const val MOVIE_EXTRAS = "movie extras"
+        const val QUERY_EXTRAS = "query extras"
     }
 
     var query = ""
@@ -74,12 +74,12 @@ class MovieSearchActivity : AppCompatActivity(), MovieSearchFragment.MovieHost {
     /**
      * check if the device is tablet
      */
-    fun isTablet(): Boolean {
+    private fun isTablet(): Boolean {
         val xlarge =
-            getResources().getConfiguration().screenLayout and
+            resources.configuration.screenLayout and
                     Configuration.SCREENLAYOUT_SIZE_MASK == 4
         val large =
-            getResources().getConfiguration().screenLayout and
+            resources.configuration.screenLayout and
                     Configuration.SCREENLAYOUT_SIZE_MASK == Configuration.SCREENLAYOUT_SIZE_LARGE
         return xlarge || large
     }
