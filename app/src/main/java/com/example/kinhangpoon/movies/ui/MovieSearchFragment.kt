@@ -10,7 +10,6 @@ import android.view.ViewGroup
 import android.widget.AbsListView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -19,11 +18,14 @@ import com.example.kinhangpoon.movies.common.GUIUtil
 import com.example.kinhangpoon.movies.databinding.FragmentMovieSearchBinding
 import com.example.kinhangpoon.movies.model.adapter.MovieAdapter
 import com.example.kinhangpoon.movies.model.response.MovieResponse
-import com.example.kinhangpoon.movies.common.Injector
+import com.example.kinhangpoon.movies.storage.SharedPreferencesStorage
 import com.example.kinhangpoon.movies.ui.MovieSearchActivity.Companion.QUERY_EXTRAS
 import com.example.kinhangpoon.movies.viewModel.MovieViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class MovieSearchFragment : Fragment() {
 
     interface MovieHost {
@@ -31,9 +33,11 @@ class MovieSearchFragment : Fragment() {
         fun setQueryText(text: String)
     }
 
-    private val viewModel: MovieViewModel by viewModels {
-        Injector.provideMovieViewModelFactory(requireContext())
-    }
+    @Inject
+    lateinit var viewModel: MovieViewModel
+
+    @Inject
+    lateinit var sharedPreferencesStorage: SharedPreferencesStorage
 
     private var movieAdapter: MovieAdapter? = null
     private lateinit var movieList: MutableList<MovieResponse>

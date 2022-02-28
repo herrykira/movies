@@ -2,8 +2,9 @@ package com.example.kinhangpoon.movies.model.service
 
 import com.example.kinhangpoon.movies.model.response.MovieResponse
 import kotlinx.coroutines.flow.Flow
+import javax.inject.Inject
 
-class MovieRepository private constructor(private val movieService: NetworkService) : Repository {
+class MovieRepository @Inject constructor(private val movieService: NetworkService) : Repository {
     override suspend fun searchQuery(text: String, index: String): Flow<List<MovieResponse>?> =
         movieService.getMoviesFlow(text, index)
 

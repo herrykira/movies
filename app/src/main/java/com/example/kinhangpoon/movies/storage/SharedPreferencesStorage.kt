@@ -1,8 +1,9 @@
 package com.example.kinhangpoon.movies.storage
 
 import android.content.Context
+import javax.inject.Inject
 
-class SharedPreferencesStorage(context: Context) : Storage {
+class SharedPreferencesStorage @Inject constructor(context: Context) : Storage {
     private val sharedPreferences = context.getSharedPreferences("movies", Context.MODE_PRIVATE)
 
     override fun setString(key: String, value: String) {

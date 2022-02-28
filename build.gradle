@@ -2,6 +2,7 @@
 
 buildscript {
     ext.kotlin_version = '1.6.10'
+    ext.hilt_version = '2.40'
 
     ext {
         // global variables
@@ -52,6 +53,9 @@ buildscript {
                 // threading
                 "androidx.annotation:annotation:$annotations_version",
 
+                //Hilt
+                "com.google.dagger:hilt-android:$hilt_version"
+
         ]
 
         arch_libraries = [
@@ -63,7 +67,8 @@ buildscript {
 
         librariesKapt = [
                 "androidx.room:room-compiler:$room_version",
-                "com.github.bumptech.glide:compiler:$glide_version"
+                "com.github.bumptech.glide:compiler:$glide_version",
+                "com.google.dagger:hilt-android-compiler:$hilt_version"
         ]
 
         testLibraries = [
@@ -93,6 +98,13 @@ buildscript {
                 //  Architecture Components testing libraries
                 "androidx.arch.core:core-testing:$arch_version",
                 "androidx.work:work-testing:$work_version",
+
+                //Hilt
+                "com.google.dagger:hilt-android-testing:$hilt_version"
+        ]
+
+        androidTestKaptLibraries = [
+                "com.google.dagger:hilt-android-compiler:$hilt_version"
         ]
     }
 
@@ -103,6 +115,7 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:7.0.4'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "com.google.dagger:hilt-android-gradle-plugin:$hilt_version"
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }

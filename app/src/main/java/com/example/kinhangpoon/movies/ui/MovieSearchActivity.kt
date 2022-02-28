@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.kinhangpoon.movies.R
 import com.example.kinhangpoon.movies.databinding.ActivityMovieSearchBinding
 import com.example.kinhangpoon.movies.model.response.MovieResponse
+import dagger.hilt.android.AndroidEntryPoint
 
 /**
  * used MVP design pattern to develop this application
@@ -17,6 +18,7 @@ import com.example.kinhangpoon.movies.model.response.MovieResponse
  * use a split screen for tablets
  * add unit test for MovieSearchPresenterImpl class and MovieSearchRepository class
  */
+@AndroidEntryPoint
 class MovieSearchActivity : AppCompatActivity(), MovieSearchFragment.MovieHost {
 
     companion object {
