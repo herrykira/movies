@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.AbsListView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -17,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.kinhangpoon.movies.MovieApplication
 import com.example.kinhangpoon.movies.common.GUIUtil
 import com.example.kinhangpoon.movies.databinding.FragmentMovieSearchBinding
+import com.example.kinhangpoon.movies.di.ViewModelFactory
 import com.example.kinhangpoon.movies.model.adapter.MovieAdapter
 import com.example.kinhangpoon.movies.model.response.MovieResponse
 import com.example.kinhangpoon.movies.storage.SharedPreferencesStorage
@@ -33,6 +35,7 @@ class MovieSearchFragment : Fragment() {
     }
 
     @Inject
+    lateinit var viewModelFactory: ViewModelFactory
     lateinit var viewModel: MovieViewModel
 
     @Inject
@@ -56,6 +59,7 @@ class MovieSearchFragment : Fragment() {
         val searchComponentFactory =
             (requireActivity().application as MovieApplication).appComponent.searchComponent()
         searchComponentFactory.create().inject(this)
+        viewModel = ViewModelProvider(this, viewModelFactory)[MovieViewModel::class.java]
         host = context as MovieHost
     }
 

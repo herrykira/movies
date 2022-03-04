@@ -1,6 +1,9 @@
 package com.example.kinhangpoon.movies.di
 
+import com.example.kinhangpoon.movies.model.service.MovieRepository
 import com.example.kinhangpoon.movies.model.service.MovieSearchApi
+import com.example.kinhangpoon.movies.model.service.Repository
+import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
